@@ -10,15 +10,10 @@ body {
 h1 {
     display: flex;
     justify-content: center;
-    /* text-align: center; */
     font-size: 31px;
-    /* position: absolute; */
     color: aqua;
-}
+    font-family: monospace;
 
-#img {
-    width: 75px;
-    position: absolute;
 }
 
 #btn {
@@ -29,18 +24,21 @@ h1 {
     margin-left: 11px;
     background: aqua;
     font-size: large;
+    font-family: fantasy;
 }
+
 /* #cronometro{
     font-size: 30px;
     color: darkred;
 } */
 
-.conthits{
+.conthits {
     display: flex;
     justify-content: center;
     margin-top: 500px;
 }
-.hits{
+
+.pontos {
     color: blue;
     height: 35px;
     width: 80px;
@@ -50,4 +48,50 @@ h1 {
     align-items: center;
     border: 5px solid #610606db;
     justify-content: center;
-  }
+}
+
+/* @media (max-width: 700px) {
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 31px;
+        color: aqua;
+        font-family: monospace;
+
+    }
+
+    #btn {
+        width: 75px;
+        height: 35px;
+        border: none;
+        border-radius: 10px;
+        margin-left: 11px;
+        background: aqua;
+        font-size: large;
+        font-family: fantasy;
+    }
+
+    /* #cronometro{
+    font-size: 30px;
+    color: darkred;
+} */
+
+    .conthits {
+        display: flex;
+        justify-content: center;
+        margin-top: 500px;
+    }
+
+    .pontos {
+        color: blue;
+        height: 35px;
+        width: 80px;
+        display: flex;
+        border-radius: 40px;
+        font-size: 30px;
+        align-items: center;
+        border: 5px solid #610606db;
+        justify-content: center;
+    }
+} */
