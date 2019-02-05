@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    font-size: 31px;
+    /* position: absolute; */
+    color: aqua;
+}
+
+#img {
+    width: 75px;
+    position: absolute;
+}
+
+#btn {
+    width: 75px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 11px;
+    background: aqua;
+    font-size: large;
+}
+/* #cronometro{
+    font-size: 30px;
+    color: darkred;
+} */
+
+.conthits{
+    display: flex;
+    justify-content: center;
+    margin-top: 500px;
+}
+.hits{
+    color: blue;
+    height: 35px;
+    width: 80px;
+    display: flex;
+    border-radius: 40px;
+    font-size: 30px;
+    align-items: center;
+    border: 5px solid #610606db;
+    justify-content: center;
+  }
