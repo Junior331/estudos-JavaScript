@@ -84,6 +84,11 @@ section {
 }
 .ImgUser {
   border-radius: 190px;
+  width: 126px;
+  height: 126px;
+  /* display: flex; */
+  /* justify-content: center; */
+  margin-left: 35px;
 }
 a {
   color: transparent;
