@@ -1,0 +1,90 @@
+/* @import url("http//fonts.googlepis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"); */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #060c21;
+  font-family: "Poppins", sans-serif;
+}
+.texto{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  justify-content: center;
+}
+.box {
+  position: relative;
+  width: 231px;
+  height: 302px;
+  display: flex;
+  align-items: center;
+  background: #060c21;
+  /* border: 1px solid #000; */
+  justify-content: space-around;
+  margin: 15px;
+}
+.box:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #000;
+  z-index: -1;
+}
+.box:after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -2;
+  filter: blur(40px);
+}
+.box:after,
+.box:before {
+  background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4);
+}
+.content {
+  padding: 20px;
+  width: 80vw;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  text-align: center;
+}
+.email:hover {
+  fill: red;
+}
+.add:hover {
+  fill: #8db600;
+}
+.icone {
+  width: 42px;
+  margin: 0px 15px;
+  padding: 22px 10px;
+}
+.caractUser {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  padding: 20px;
+}
+.ImgUser {
+  border-radius: 190px;
+}
+a {
+  color: transparent;
+}
