@@ -1,59 +1,10 @@
-const main = document.querySelector("main");
-const buttonInsertText = document.querySelector(".btn-toggle");
-const modalShow = document.querySelector(".text-box");
 const modalClose = document.querySelector(".close");
+const textArea = document.querySelector("textarea");
+const modalShow = document.querySelector(".text-box");
 const selectElement = document.querySelector("select");
+const buttonReadText = document.querySelector("#read");
+const buttonInsertText = document.querySelector(".btn-toggle");
 
-const humanExpression = [
-  {
-    img: "./img/angry.jpg",
-    text: "Estou com raiva",
-  },
-  {
-    img: "./img/drink.jpg",
-    text: "Estou com sede",
-  },
-  {
-    img: "./img/food.jpg",
-    text: "Estou com fome",
-  },
-  {
-    img: "./img/grandma.jpg",
-    text: "Quero ver a vovó",
-  },
-  {
-    img: "./img/happy.jpg",
-    text: "Estou feliz",
-  },
-  {
-    img: "./img/home.jpg",
-    text: "Quero ir para casa",
-  },
-  {
-    img: "./img/hurt.jpg",
-    text: "Estou machucado",
-  },
-  {
-    img: "./img/outside.jpg",
-    text: "Quero ir lá fora",
-  },
-  {
-    img: "./img/sad.jpg",
-    text: "Estou triste",
-  },
-  {
-    img: "./img/scared.jpg",
-    text: "Estou assustado",
-  },
-  {
-    img: "./img/school.jpg",
-    text: "Quero ir para a escola",
-  },
-  {
-    img: "./img/tired.jpg",
-    text: "Estou cansado",
-  },
-];
 // utterance e um obj que reprecenta um pedido de fala/leitura e contem informações sobre o que deve ser lido, como dever lido e qual linguem deve ser lida
 const utterance = new SpeechSynthesisUtterance();
 const setTextMessage = (text) => {
@@ -64,31 +15,11 @@ const speakText = () => {
 };
 
 const setVoice = (event) => {
-  //   console.log("test");
-  utterance.voice = voices.find((voice) => voice.name === event.target.value);
+  const selectedVoice = voices.find(
+    (voice) => voice.name === event.target.value
+  );
+  utterance.voice = selectedVoice;
 };
-
-const createExpressionBox = ({ img, text }) => {
-  const div = document.createElement("div");
-  div.classList.add("expression-box");
-
-  div.innerHTML = `
-   <img src="${img} " alt="${text}"/>
-   <p class="info">${text}</p>
-  `;
-  div.addEventListener("click", () => {
-    setTextMessage(text);
-    speakText();
-
-    div.classList.add("active");
-    setTimeout(() => {
-      div.classList.remove("active");
-    }, 1000);
-  });
-  main.appendChild(div);
-};
-
-humanExpression.forEach(createExpressionBox);
 
 let voices = [];
 
@@ -96,6 +27,7 @@ let voices = [];
 // executar uma func quando alista de voz mudar
 speechSynthesis.addEventListener("voiceschanged", () => {
   voices = speechSynthesis.getVoices();
+  console.log(voices);
   // executando uma func para cada elemento do array
   voices.forEach(({ name, lang }) => {
     const option = document.createElement("option");
@@ -108,7 +40,6 @@ speechSynthesis.addEventListener("voiceschanged", () => {
 
     //dependendo do browser ou sistema operacional essa vozes podem variar
     selectElement.appendChild(option);
-    console.log(option);
   });
 });
 
@@ -123,3 +54,8 @@ modalClose.addEventListener("click", () => {
 
 //escutando as mudança do select
 selectElement.addEventListener("change", setVoice);
+
+buttonReadText.addEventListener("click", () => {
+  setTextMessage(textArea.value);
+  speakText();
+});

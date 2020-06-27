@@ -48,9 +48,9 @@ select:focus {
 }
 
 .text-box {
-  top: 30%;
+  top: 35%;
   left: 50%;
-  width: 70%;
+  width: 50%;
   color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -78,6 +78,7 @@ select {
 
 .text-box textarea {
   width: 100%;
+  resize: none;
   padding: 8px;
   height: 150px;
   margin: 15px 0;
@@ -87,51 +88,17 @@ select {
 }
 
 .text-box .btn {
-  width: 100%;
+  width: 20%;
+  float: right;
 }
 
 .text-box .close {
-  /* float: right; */
+  float: right;
+  border: none;
+  color: white;
+  font-size: 15px;
   cursor: pointer;
-  text-align: right;
-}
-
-main {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.expression-box {
-  display: flex;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 5px;
-  flex-direction: column;
-  transition: box-shadow 0.2s ease-out;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.expression-box.active {
-  box-shadow: 0 0 10px 5px #11ae68;
-}
-
-.expression-box img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.expression-box .info {
-  margin: 0;
-  height: 100%;
-  color: #fff;
-  padding: 10px;
-  font-size: 18px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  background-color: #11ae68;
+  background: none;
 }
 
 @media (max-width: 1100px) {
